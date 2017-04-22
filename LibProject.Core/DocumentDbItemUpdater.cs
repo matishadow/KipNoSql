@@ -17,11 +17,10 @@ namespace LibProject.Core
 
         public async Task<Document> UpdateItemAsync(Guid id, T item)
         {
-            return
-                await
-                    DocumentClient.ReplaceDocumentAsync(
-                        UriFactory.CreateDocumentUri(DocumentDbCredentials.DatabaseId,
-                            DocumentDbCredentials.CollectionId, id.ToString()), item);
+            Uri documentUri = UriFactory.CreateDocumentUri(DocumentDbCredentials.DatabaseId,
+                DocumentDbCredentials.CollectionId, id.ToString());
+
+            return await DocumentClient.ReplaceDocumentAsync(documentUri, item);
         }
 
         public Document UpdateItem(Guid id, T item)

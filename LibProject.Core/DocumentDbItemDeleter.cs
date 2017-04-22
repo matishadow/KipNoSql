@@ -16,9 +16,10 @@ namespace LibProject.Core
 
         public async Task DeleteItemAsync(Guid id)
         {
-            await
-                DocumentClient.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DocumentDbCredentials.DatabaseId,
-                    DocumentDbCredentials.CollectionId, id.ToString()));
+            Uri documentUri = UriFactory.CreateDocumentUri(DocumentDbCredentials.DatabaseId,
+                DocumentDbCredentials.CollectionId, id.ToString());
+
+            await DocumentClient.DeleteDocumentAsync(documentUri);
         }
 
         public void DeleteItem(Guid id)

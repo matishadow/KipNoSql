@@ -22,12 +22,12 @@ namespace LibProject.Core
         {
             try
             {
-                Document document =
-                    await
-                        DocumentClient.ReadDocumentAsync(UriFactory.CreateDocumentUri(DocumentDbCredentials.DatabaseId,
-                            DocumentDbCredentials.CollectionId, id.ToString()));
+                Uri documentUri = UriFactory.CreateDocumentUri(DocumentDbCredentials.DatabaseId,
+                    DocumentDbCredentials.CollectionId, id.ToString());
 
-                return (T)(dynamic)document;
+                Document document = await DocumentClient.ReadDocumentAsync(documentUri);
+
+                return (T) (dynamic) document;
             }
             catch (DocumentClientException e)
             {
