@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibProject.Core
+namespace LibProject.Models
 {
-    public class Class1
+    public class Author : Person
     {
+        
     }
 }
