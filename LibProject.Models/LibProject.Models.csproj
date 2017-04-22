@@ -40,6 +40,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs" />
+    <Compile Include="Book.cs" />
+    <Compile Include="DocumentDbCredentials.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Language.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="Rental.cs" />
     <Compile Include="Renter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
