@@ -11,6 +11,8 @@
     <AssemblyName>LibProject.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDocumentDbItemCreator.cs" />
     <Compile Include="IDocumentDbItemDeleter.cs" />
     <Compile Include="IDocumentDbItemGetter.cs" />
     <Compile Include="IDocumentDbItemUpdater.cs" />

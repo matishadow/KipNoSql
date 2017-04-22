@@ -10,9 +10,9 @@ namespace LibProject.Models
     {
         public Entity()
         {
-            Id = Guid.NewGuid();
+            id = Guid.NewGuid();
         }
 
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
     }
 }

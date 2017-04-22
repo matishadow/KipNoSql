@@ -68,5 +68,15 @@ namespace LibProject.Core
 
             return items.Result;
         }
+
+        public Task<IEnumerable<T>> GetItemsAsync()
+        {
+            return GetItemsAsync(arg => true);
+        }
+
+        public IEnumerable<T> GetItems()
+        {
+            return GetItems(arg => true);
+        }
     }
 }

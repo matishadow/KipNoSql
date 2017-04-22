@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibProject.Interfaces", "Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibProject.Tests", "LibProject.Tests\LibProject.Tests.csproj", "{D4B8EA14-31A7-4717-BAA3-40E999985E79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibProject.ConsoleApp", "LibProject.ConsoleApp\LibProject.ConsoleApp.csproj", "{4170FFC0-9814-4986-A5FE-468728D62392}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D4B8EA14-31A7-4717-BAA3-40E999985E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4B8EA14-31A7-4717-BAA3-40E999985E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4B8EA14-31A7-4717-BAA3-40E999985E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4170FFC0-9814-4986-A5FE-468728D62392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4170FFC0-9814-4986-A5FE-468728D62392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4170FFC0-9814-4986-A5FE-468728D62392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4170FFC0-9814-4986-A5FE-468728D62392}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

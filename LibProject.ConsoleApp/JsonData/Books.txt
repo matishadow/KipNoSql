@@ -1,0 +1,44 @@
+﻿[
+  {
+    "Id": "F057F385-DBFC-4603-B432-CF8C5770CC1A",
+    "Title": "The Ocean at the End of the Lane",
+    "AuthorId": "E494FB8A-B061-44B6-8813-09B22D77A7BB",
+    "ISBN": "0062255657"
+  },
+  {
+    "Id": "81E88010-78F7-47CA-B2F4-4D94730755EE",
+    "Title": "Coraline",
+    "AuthorId": "E494FB8A-B061-44B6-8813-09B22D77A7BB",
+    "ISBN": "0061139378"
+  },
+  {
+    "Id": "C757606D-F8ED-47B3-94C8-A06B7808D54E",
+    "Title": "Neverwhere",
+    "AuthorId": "E494FB8A-B061-44B6-8813-09B22D77A7BB",
+    "ISBN": "0060557818"
+  },
+  {
+    "Id": "2E5474AA-576A-4F0A-BA4E-C16588E72AE2",
+    "Title": "The Black Prism",
+    "AuthorId": "5DC96AC9-0903-44EA-A713-554CB0180D4E",
+    "ISBN": "0316075558"
+  },
+  {
+    "Id": "8171A40E-3D45-49E7-8FBB-52F3113381A8",
+    "Title": "The Broken Eye",
+    "AuthorId": "5DC96AC9-0903-44EA-A713-554CB0180D4E",
+    "ISBN": ""
+  },
+  {
+    "Id": "93EDAAE0-10D2-434C-92E7-B6E480DA8E8B",
+    "Title": "The Name of the Wind",
+    "AuthorId": "CC2B22AA-0941-44B3-A491-D9D6B788A50B",
+    "ISBN": "075640407X"
+  },
+  {
+    "Id": "FEF1E3A3-EF3C-47DB-A75A-4BFE513C9F21",
+    "Title": "The Wise Man's Fear",
+    "AuthorId": "CC2B22AA-0941-44B3-A491-D9D6B788A50B",
+    "ISBN": "0756404738"
+  }
+]

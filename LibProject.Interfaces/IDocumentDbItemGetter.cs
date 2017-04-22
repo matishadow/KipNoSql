@@ -9,7 +9,11 @@ namespace LibProject.Interfaces
     {
         Task<T> GetItemAsync(Guid id);
         T GetItem(Guid id);
+
         Task<IEnumerable<T>> GetItemsAsync(Expression<Func<T, bool>> predicate);
         IEnumerable<T> GetItems(Expression<Func<T, bool>> predicate);
+
+        Task<IEnumerable<T>> GetItemsAsync();
+        IEnumerable<T> GetItems();
     }
 }

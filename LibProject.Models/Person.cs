@@ -4,5 +4,10 @@
     {
         public string FirstName { get; set; }
         public string Surname { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(FirstName)}: {FirstName}, {nameof(Surname)}: {Surname}";
+        }
     }
 }

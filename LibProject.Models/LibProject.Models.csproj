@@ -44,7 +44,6 @@
     <Compile Include="Book.cs" />
     <Compile Include="DocumentDbCredentials.cs" />
     <Compile Include="Entity.cs" />
-    <Compile Include="Language.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Rental.cs" />
     <Compile Include="Renter.cs" />

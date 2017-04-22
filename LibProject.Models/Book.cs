@@ -10,8 +10,11 @@ namespace LibProject.Models
     {
         public string Title { get; set; }
         public Guid AuthorId { get; set; }
-        public Language Language { get; set; }
         public string ISBN { get; set; }
-        public DateTime PublicationDate { get; set; }
+
+        public override string ToString()
+        {
+            return $"{nameof(Title)}: {Title}, {nameof(AuthorId)}: {AuthorId}, {nameof(ISBN)}: {ISBN}";
+        }
     }
 }

@@ -1,0 +1,17 @@
+﻿[
+  {
+    "Id": "CC2B22AA-0941-44B3-A491-D9D6B788A50B",
+    "FirstName": "Patrick",
+    "Surname": "Rothfuss"
+  },
+  {
+    "Id": "5DC96AC9-0903-44EA-A713-554CB0180D4E",
+    "FirstName": "Brent",
+    "Surname": "Weeks"
+  },
+  {
+    "Id": "E494FB8A-B061-44B6-8813-09B22D77A7BB",
+    "FirstName": "Neil",
+    "Surname": "Gaiman"
+  }
+]
