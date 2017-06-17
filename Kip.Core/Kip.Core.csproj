@@ -61,11 +61,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibProject.Interfaces\Kip.Interfaces.csproj">
+    <ProjectReference Include="..\Kip.Interfaces\Kip.Interfaces.csproj">
       <Project>{e835199e-2b08-4697-935f-337de1bfff68}</Project>
       <Name>Kip.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LibProject.Models\Kip.Models.csproj">
+    <ProjectReference Include="..\Kip.Models\Kip.Models.csproj">
       <Project>{751916e7-3e77-4560-841b-d25c2fc64a77}</Project>
       <Name>Kip.Models</Name>
     </ProjectReference>
