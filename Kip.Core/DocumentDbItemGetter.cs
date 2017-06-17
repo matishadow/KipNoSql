@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
-using LibProject.Interfaces;
-using LibProject.Models;
+using Kip.Interfaces;
+using Kip.Models;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
 
-namespace LibProject.Core
+namespace Kip.Core
 {
     public class DocumentDbItemGetter<T> : DocumentDbBase, IDocumentDbItemGetter<T> where T : class 
     {

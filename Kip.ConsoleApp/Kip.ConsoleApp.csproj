@@ -7,8 +7,8 @@
     <ProjectGuid>{4170FFC0-9814-4986-A5FE-468728D62392}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LibProject.ConsoleApp</RootNamespace>
-    <AssemblyName>LibProject.ConsoleApp</AssemblyName>
+    <RootNamespace>Kip.ConsoleApp</RootNamespace>
+    <AssemblyName>Kip.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -63,23 +66,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <Content Include="JsonData\Authors.txt" />
     <Content Include="JsonData\Books.txt" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LibProject.Core\LibProject.Core.csproj">
+    <ProjectReference Include="..\LibProject.Core\Kip.Core.csproj">
       <Project>{840dc94b-8e95-4d7d-94da-8fad8faea61c}</Project>
-      <Name>LibProject.Core</Name>
+      <Name>Kip.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LibProject.Interfaces\LibProject.Interfaces.csproj">
+    <ProjectReference Include="..\LibProject.Interfaces\Kip.Interfaces.csproj">
       <Project>{e835199e-2b08-4697-935f-337de1bfff68}</Project>
-      <Name>LibProject.Interfaces</Name>
+      <Name>Kip.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\LibProject.Models\LibProject.Models.csproj">
+    <ProjectReference Include="..\LibProject.Models\Kip.Models.csproj">
       <Project>{751916e7-3e77-4560-841b-d25c2fc64a77}</Project>
-      <Name>LibProject.Models</Name>
+      <Name>Kip.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

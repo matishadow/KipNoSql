@@ -7,8 +7,8 @@
     <ProjectGuid>{E835199E-2B08-4697-935F-337DE1BFFF68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LibProject.Interfaces</RootNamespace>
-    <AssemblyName>LibProject.Interfaces</AssemblyName>
+    <RootNamespace>Kip.Interfaces</RootNamespace>
+    <AssemblyName>Kip.Interfaces</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace LibProject.Interfaces
+namespace Kip.Interfaces
 {
     public interface IDocumentDbItemDeleter
     {

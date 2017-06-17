@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 
-namespace LibProject.Interfaces
+namespace Kip.Interfaces
 {
     public interface IDocumentDbItemCreator<in T>
     {

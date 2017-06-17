@@ -1,4 +1,4 @@
-﻿namespace LibProject.Models
+﻿namespace Kip.Models
 {
     public class DocumentDbCredentials
     {

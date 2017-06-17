@@ -242,3 +242,5 @@ ModelManifest.xml
 .fake/
 
 LibProject\.ConsoleApp/App\.config
+
+Kip\.ConsoleApp/App\.config

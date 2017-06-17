@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
-using LibProject.Interfaces;
-using LibProject.Models;
+using Kip.Interfaces;
+using Kip.Models;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 
-namespace LibProject.Core
+namespace Kip.Core
 {
     public class DocumentDbItemDeleter : DocumentDbBase, IDocumentDbItemDeleter
     {

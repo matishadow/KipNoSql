@@ -1,7 +1,7 @@
-﻿using LibProject.Models;
+﻿using Kip.Models;
 using Microsoft.Azure.Documents;
 
-namespace LibProject.Core
+namespace Kip.Core
 {
     public class DocumentDbBase
     {

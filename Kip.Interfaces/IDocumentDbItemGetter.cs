@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace LibProject.Interfaces
+namespace Kip.Interfaces
 {
     public interface IDocumentDbItemGetter<T>
     {
