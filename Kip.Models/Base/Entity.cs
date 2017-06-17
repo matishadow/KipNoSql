@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Kip.Models
+namespace Kip.Models.Base
 {
     public class Entity
     {
