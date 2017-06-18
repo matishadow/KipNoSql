@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Kip.Models.Base.Book>
+
+<p>
+    @Html.ActionLink("Dodaj nową książkę", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Author)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ISBN)
+        </td>
+        <td>
+            @Html.ActionLink("Edytuj pozycję", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Usuń pozycję", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

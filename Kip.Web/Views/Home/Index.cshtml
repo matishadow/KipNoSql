@@ -3,6 +3,7 @@
 }
 @model Kip.Models.BaseCollections
 
+
 <div class="jumbotron">
     <h1>Kip</h1>
     <p class="lead">System do zarzadzania publikacjami</p>
@@ -14,18 +15,17 @@
 
         <div class="col-md-3">
             <div class="list-group">
-                @Html.ActionLink("Książki", "Index", "Book", null,  new {@class = "list-group-item"})
-                @Html.ActionLink("Ebooki", "Index", "Home", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Gry video", "Index", "Home", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Czasopisma", "Index", "Home", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Filmy", "Index", "Home", null, new { @class = "list-group-item" })
-                @Html.ActionLink("Muzyka", "Index", "Home", null, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Książki", "Books", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container"}, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Ebooki", "EBooks", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Gry video", "GameDiscs", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Czasopisma", "Magazines", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Filmy", "MovieDvds", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Muzyka", "MusicCds", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
             </div>
         </div>
 
-        <div class="col-md-9">
-            @Html.Partial("Book", Model.Books)
-
+        <div class="col-md-9" id="collection-container">
+            
         </div>
     </div>
 </div>

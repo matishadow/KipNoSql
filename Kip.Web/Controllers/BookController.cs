@@ -15,6 +15,8 @@ namespace Kip.Web.Controllers
             return View();
         }
 
+        
+
         // GET: Book/Create
         public ActionResult Create()
         {

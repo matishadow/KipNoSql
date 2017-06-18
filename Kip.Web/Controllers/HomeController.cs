@@ -19,6 +19,26 @@ namespace Kip.Web.Controllers
             return View(new BaseCollections(){Books = m});
         }
 
+        public ActionResult Books()
+        {
+            var m = new List<Book>()
+            {
+                new Book() {Author = "A", ISBN = "b", PageCount = 4, Title = "c"}
+            };
+
+            return PartialView("Books", m);
+        }
+
+        public ActionResult EBooks()
+        {
+            var m = new List<EBook>
+            {
+                new EBook() {Author = "A", Format = "1", ISBN = "awdawd", SizeInMegaBytes = 3234}
+            };
+
+            return PartialView("EBooks", m);
+        }
+
         public ActionResult About()
         {
             return View();
