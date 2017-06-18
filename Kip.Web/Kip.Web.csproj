@@ -141,6 +141,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\EBookController.cs" />
+    <Compile Include="Controllers\GameDiscController.cs" />
+    <Compile Include="Controllers\MagazineController.cs" />
+    <Compile Include="Controllers\MovieDvdContoller.cs" />
+    <Compile Include="Controllers\MusicCdController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -205,11 +210,17 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\ItemCollection.cshtml" />
     <Content Include="Views\Home\EBooks.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Book\Create.cshtml" />
+    <Content Include="Views\EBook\Create.cshtml" />
+    <Content Include="Views\GameDisc\Create.cshtml" />
+    <Content Include="Views\Magazine\Create.cshtml" />
+    <Content Include="Views\MovieDvd\Create.cshtml" />
+    <Content Include="Views\MusicCd\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Book\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

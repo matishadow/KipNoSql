@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Kip.Web.Controllers
 {
-    public class BookController : BaseController
+    public class MusicCdController : BaseController
     {
         [HttpPost]
         public async Task<ActionResult> Create(FormCollection collection)
