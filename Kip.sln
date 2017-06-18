@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kip.Interfaces", "Kip.Inter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kip.ConsoleApp", "Kip.ConsoleApp\Kip.ConsoleApp.csproj", "{4170FFC0-9814-4986-A5FE-468728D62392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kip.Web", "Kip.Web\Kip.Web.csproj", "{159AEC87-7C85-4B5D-A95F-A1D6F66A9695}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kip.Web", "Kip.Web\Kip.Web.csproj", "{DC38063E-02DE-4389-B2F0-A47011A06BD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{4170FFC0-9814-4986-A5FE-468728D62392}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4170FFC0-9814-4986-A5FE-468728D62392}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4170FFC0-9814-4986-A5FE-468728D62392}.Release|Any CPU.Build.0 = Release|Any CPU
-		{159AEC87-7C85-4B5D-A95F-A1D6F66A9695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{159AEC87-7C85-4B5D-A95F-A1D6F66A9695}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{159AEC87-7C85-4B5D-A95F-A1D6F66A9695}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{159AEC87-7C85-4B5D-A95F-A1D6F66A9695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC38063E-02DE-4389-B2F0-A47011A06BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC38063E-02DE-4389-B2F0-A47011A06BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC38063E-02DE-4389-B2F0-A47011A06BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC38063E-02DE-4389-B2F0-A47011A06BD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
