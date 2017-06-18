@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseCollections.cs" />
     <Compile Include="Base\Book.cs" />
     <Compile Include="Base\GameDisc.cs" />
     <Compile Include="Base\Magazine.cs" />
