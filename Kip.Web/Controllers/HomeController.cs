@@ -29,23 +29,49 @@ namespace Kip.Web.Controllers
             a.Title = "C";
             a.id = Guid.NewGuid();
 
+            dynamic c = new ExpandoObject();
+            c.Author = "A";
+            c.ISBN = "B";
+            c.PageCount = 4;
+            c.Title = "C";
+            c.id = Guid.NewGuid();
+
+            dynamic d = new ExpandoObject();
+            d.Author = "A";
+            d.ISBN = "B";
+            d.PageCount = 4;
+            d.Title = "C";
+            d.id = Guid.NewGuid();
+            d.FUCKaHISSHIT = "a";
+
+            dynamic b = new ExpandoObject();
+            b.Title = "C";
+            b.id = Guid.NewGuid();
+
 
             var m = new List<ExpandoObject>()
             {
-                a
+                a, b, c, d
             };
 
-            return PartialView("Books", m);
+            return PartialView("ItemCollection", m);
         }
 
         public ActionResult EBooks()
         {
-            var m = new List<EBook>
+            dynamic a = new ExpandoObject();
+            a.Author = "A";
+            a.Format = "pdf";
+            a.ISBN = "AFawfaw";
+            a.SizeInMegaBytes = 2324;
+            a.id = Guid.NewGuid();
+
+            var m = new List<ExpandoObject>
             {
-                new EBook() {Author = "A", Format = "1", ISBN = "awdawd", SizeInMegaBytes = 3234, id = Guid.NewGuid()}
+                a
             };
 
-            return PartialView("EBooks", m);
+            return PartialView("ItemCollection", m);
         }
 
         public ActionResult About()
