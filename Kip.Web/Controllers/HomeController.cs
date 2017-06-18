@@ -17,46 +17,14 @@ namespace Kip.Web.Controllers
     {
         public ActionResult Index()
         {
-            var m = new List<Book>()
-            {
-                new Book() {Author = "A", ISBN = "b", PageCount = 4, Title = "c", id = Guid.NewGuid()}
-            };
-            return View(new BaseCollections(){Books = m});
+            return View();
         }
 
-        private static DocumentDbCredentials CreateDocumentDbCredentials()
+        public async Task<ActionResult> GetCollection(string type)
         {
-            string databaseId = ConfigurationManager.AppSettings["database"];
-            string collectionId = ConfigurationManager.AppSettings["collection"];
-            string endpoint = ConfigurationManager.AppSettings["endpoint"];
-            string authKey = ConfigurationManager.AppSettings["authKey"];
-
-            return new DocumentDbCredentials(endpoint, authKey, databaseId, collectionId);
-        }
-
-
-        public async Task<ActionResult> Books()
-        {
-            var items = await GetCollectionByType("Book");
+            IEnumerable<ExpandoObject> items = await GetCollectionByType(type);
 
             return PartialView("ItemCollection", items);
-        }
-
-        public ActionResult EBooks()
-        {
-            dynamic a = new ExpandoObject();
-            a.Author = "A";
-            a.Format = "pdf";
-            a.ISBN = "AFawfaw";
-            a.SizeInMegaBytes = 2324;
-            a.id = Guid.NewGuid();
-
-            var m = new List<ExpandoObject>
-            {
-                a
-            };
-
-            return PartialView("ItemCollection", m);
         }
 
         public ActionResult About()

@@ -1,7 +1,6 @@
 ﻿@{
     ViewBag.Title = "Projekt DocumentDB";
 }
-@model Kip.Models.BaseCollections
 
 
 <div class="jumbotron">
@@ -15,12 +14,12 @@
 
         <div class="col-md-3">
             <div class="list-group">
-                @Ajax.ActionLink("Książki", "Books", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container"}, new { @class = "list-group-item" })
-                @Ajax.ActionLink("Ebooki", "EBooks", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
-                @Ajax.ActionLink("Gry video", "GameDiscs", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
-                @Ajax.ActionLink("Czasopisma", "Magazines", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
-                @Ajax.ActionLink("Filmy", "MovieDvds", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
-                @Ajax.ActionLink("Muzyka", "MusicCds", null, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Książki", "GetCollection", new {type = "Book"}, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container"}, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Ebooki", "GetCollection", new { type = "EBook" }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Gry video", "GetCollection", new { type = "GameDisc" }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Czasopisma", "GetCollection", new { type = "Magazine" }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Filmy", "GetCollection", new { type = "MovieDvd" }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
+                @Ajax.ActionLink("Muzyka", "GetCollection", new { type = "MusicCd" }, new AjaxOptions { HttpMethod = "GET", InsertionMode = InsertionMode.Replace, UpdateTargetId = "collection-container" }, new { @class = "list-group-item" })
             </div>
         </div>
 
