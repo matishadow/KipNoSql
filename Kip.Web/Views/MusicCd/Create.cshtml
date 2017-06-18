@@ -1,0 +1,100 @@
+﻿@model System.Dynamic.ExpandoObject
+
+@{
+    ViewBag.Title = "Dodanie nowej pozycji";
+}
+
+<h2>Kreator nowej pozycji</h2>
+
+
+@using (Html.BeginForm("Create", "Book", FormMethod.Post, new {id = "create-form"}))
+{
+    <div class="form-horizontal">
+        <hr/>
+
+        <div id="property-collection">
+            <div class="form-group">
+                <div class="control-label col-md-2 form-key">Tytuł</div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control form-value" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-md-2 form-key">Wykonawca</div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control form-value" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="control-label col-md-2 form-key">Rok wydania</div>
+                <div class="col-md-10">
+                    <input type="text" class="form-control form-value" />
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="property-btn" type="button" value="Dodaj właściwość" class="btn btn-default"/>
+            </div>
+        </div>
+
+        <br/>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="create-button" type="button" value="Stwórz nową pozycję" class="btn btn-success"/>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#property-btn').click(function() {
+            $('#property-collection')
+                .append(
+                    '<div class="form-group"><div class="col-md-2"><input type="text" class="form-control form-key" /></div><div class="col-md-10"><input type="text" class="form-control form-value" /></div></div>');
+        });
+        $('#create-button').click(function() {
+            var form = '';
+
+            var keys = $(".form-key");
+            var values = $(".form-value");
+
+            for (var i = 0, len = keys.length; i < len; i++) {
+                var k = keys[i].value;
+                if (!k)
+                    k = keys[i].innerHTML;
+                var v = values[i].value;
+                if ($.isEmptyObject(k) || $.isEmptyObject(v))
+                    continue;
+                var current = k + "=" + v;
+                form += current;
+
+                if (i < len - 1)
+                    form += "&";
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "/MusicCd/Create",
+                data: form,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.result === "Error") {
+                        alert(data.message);
+                    }
+                }
+            });
+            document.location.href = "/";
+        });
+    })
+</script>
+
+<div>
+    @Html.ActionLink("Powrót do strony głównej", "Index", "Home")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,29 @@
+﻿@using System.Dynamic
+@model IEnumerable<ExpandoObject>
+
+
+<div class="container-fluid">
+    <table class="table table-hover">
+        @foreach (dynamic item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edytuj", "Edit", new {id = item.id}) |
+                    @Html.ActionLink("Usuń", "Delete", new {id = item.id})
+                </td>
+
+                @foreach (KeyValuePair<string, object> keyValuePair in item)
+                {
+                    if (keyValuePair.Key != "id" && keyValuePair.Key != "Type" && !keyValuePair.Key.StartsWith("_"))
+                    {
+                        <td>@keyValuePair.Key: @keyValuePair.Value</td>
+                    }
+                }
+            </tr>
+        }
+    </table>
+
+    <p>
+        @Html.ActionLink("Dodaj nową pozycję", "Create", Request["type"])
+    </p>
+</div>
