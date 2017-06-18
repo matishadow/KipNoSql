@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Kip.Models.Base.Book>
+﻿@using System.Dynamic
+@model IEnumerable<ExpandoObject>
 
 <p>
     @Html.ActionLink("Dodaj nową książkę", "Create")
@@ -6,33 +7,33 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            Tytuł
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Author)
+            Autor
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PageCount)
+            Liczba stron
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ISBN)
+            ISBN
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (dynamic item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Title)
+            @item.Title
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Author)
+            @item.Author
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PageCount)
+            @item.PageCount
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ISBN)
+            @item.ISBN
         </td>
         <td>
             @Html.ActionLink("Edytuj pozycję", "Edit", new { id=item.id }) |

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,16 +15,24 @@ namespace Kip.Web.Controllers
         {
             var m = new List<Book>()
             {
-                new Book() {Author = "A", ISBN = "b", PageCount = 4, Title = "c"}
+                new Book() {Author = "A", ISBN = "b", PageCount = 4, Title = "c", id = Guid.NewGuid()}
             };
             return View(new BaseCollections(){Books = m});
         }
 
         public ActionResult Books()
         {
-            var m = new List<Book>()
+            dynamic a = new ExpandoObject();
+            a.Author = "A";
+            a.ISBN = "B";
+            a.PageCount = 4;
+            a.Title = "C";
+            a.id = Guid.NewGuid();
+
+
+            var m = new List<ExpandoObject>()
             {
-                new Book() {Author = "A", ISBN = "b", PageCount = 4, Title = "c"}
+                a
             };
 
             return PartialView("Books", m);
@@ -33,7 +42,7 @@ namespace Kip.Web.Controllers
         {
             var m = new List<EBook>
             {
-                new EBook() {Author = "A", Format = "1", ISBN = "awdawd", SizeInMegaBytes = 3234}
+                new EBook() {Author = "A", Format = "1", ISBN = "awdawd", SizeInMegaBytes = 3234, id = Guid.NewGuid()}
             };
 
             return PartialView("EBooks", m);
