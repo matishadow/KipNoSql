@@ -1,89 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Kip.Core;
+using Kip.Interfaces;
+using Kip.Models;
+using Microsoft.Azure.Documents;
+using Microsoft.Azure.Documents.Client;
 
 namespace Kip.Web.Controllers
 {
-    public class BaseController : Controller
+    public abstract class BaseController : Controller
     {
-        // GET: Base
-        public ActionResult Index()
+        protected readonly IDocumentClient DocumentClient;
+
+        protected readonly IDocumentDbItemCreator<dynamic> ItemCreator;
+        protected readonly IDocumentDbItemDeleter ItemDeleter;
+        protected readonly IDocumentDbItemGetter<dynamic> ItemGetter;
+        protected readonly IDocumentDbItemUpdater<dynamic> ItemUpdater;
+
+        protected BaseController()
         {
-            return View();
+            DocumentDbCredentials documentDbCredentials = CreateDocumentDbCredentials();
+
+            DocumentClient = new DocumentClient(new Uri(documentDbCredentials.Endpoint), documentDbCredentials.AuthKey);
+
+            ItemCreator = new DocumentDbItemCreator<dynamic>(documentDbCredentials, DocumentClient);
+            ItemDeleter = new DocumentDbItemDeleter(documentDbCredentials, DocumentClient);
+            ItemGetter = new DocumentDbItemGetter<dynamic>(documentDbCredentials, DocumentClient);
+            ItemUpdater = new DocumentDbItemUpdater<dynamic>(documentDbCredentials, DocumentClient);
         }
 
-        // GET: Base/Details/5
-        public ActionResult Details(int id)
+        private static DocumentDbCredentials CreateDocumentDbCredentials()
         {
-            return View();
-        }
+            string databaseId = ConfigurationManager.AppSettings["database"];
+            string collectionId = ConfigurationManager.AppSettings["collection"];
+            string endpoint = ConfigurationManager.AppSettings["endpoint"];
+            string authKey = ConfigurationManager.AppSettings["authKey"];
 
-        // GET: Base/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Base/Create
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Base/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Base/Edit/5
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Base/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Base/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return new DocumentDbCredentials(endpoint, authKey, databaseId, collectionId);
         }
     }
 }
