@@ -14,7 +14,7 @@
 
                 @foreach (KeyValuePair<string, object> keyValuePair in item)
                 {
-                    if (keyValuePair.Key != "id")
+                    if (keyValuePair.Key != "id" && keyValuePair.Key != "Type" && !keyValuePair.Key.StartsWith("_"))
                     {
                         <td>@keyValuePair.Key: @keyValuePair.Value</td>
                     }

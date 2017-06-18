@@ -1,15 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Dynamic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Kip.Core;
 using Kip.Models;
 using Kip.Models.Base;
+using Microsoft.Azure.Documents.Client;
 
 namespace Kip.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {
@@ -20,41 +24,22 @@ namespace Kip.Web.Controllers
             return View(new BaseCollections(){Books = m});
         }
 
-        public ActionResult Books()
+        private static DocumentDbCredentials CreateDocumentDbCredentials()
         {
-            dynamic a = new ExpandoObject();
-            a.Author = "A";
-            a.ISBN = "B";
-            a.PageCount = 4;
-            a.Title = "C";
-            a.id = Guid.NewGuid();
+            string databaseId = ConfigurationManager.AppSettings["database"];
+            string collectionId = ConfigurationManager.AppSettings["collection"];
+            string endpoint = ConfigurationManager.AppSettings["endpoint"];
+            string authKey = ConfigurationManager.AppSettings["authKey"];
 
-            dynamic c = new ExpandoObject();
-            c.Author = "A";
-            c.ISBN = "B";
-            c.PageCount = 4;
-            c.Title = "C";
-            c.id = Guid.NewGuid();
-
-            dynamic d = new ExpandoObject();
-            d.Author = "A";
-            d.ISBN = "B";
-            d.PageCount = 4;
-            d.Title = "C";
-            d.id = Guid.NewGuid();
-            d.FUCKaHISSHIT = "a";
-
-            dynamic b = new ExpandoObject();
-            b.Title = "C";
-            b.id = Guid.NewGuid();
+            return new DocumentDbCredentials(endpoint, authKey, databaseId, collectionId);
+        }
 
 
-            var m = new List<ExpandoObject>()
-            {
-                a, b, c, d
-            };
+        public async Task<ActionResult> Books()
+        {
+            var items = await GetCollectionByType("Book");
 
-            return PartialView("ItemCollection", m);
+            return PartialView("ItemCollection", items);
         }
 
         public ActionResult EBooks()

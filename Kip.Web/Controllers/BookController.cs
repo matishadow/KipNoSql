@@ -7,7 +7,7 @@ using Kip.Models.Base;
 
 namespace Kip.Web.Controllers
 {
-    public class BookController : Controller
+    public class BookController : BaseController
     {
         // GET: Book/Details/5
         public ActionResult Details(int id)
