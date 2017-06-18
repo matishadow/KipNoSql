@@ -244,3 +244,5 @@ ModelManifest.xml
 LibProject\.ConsoleApp/App\.config
 
 Kip\.ConsoleApp/App\.config
+
+Kip\.Web/Web\.config
