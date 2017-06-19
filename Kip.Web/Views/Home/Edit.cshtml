@@ -1,0 +1,91 @@
+﻿@model System.Dynamic.ExpandoObject
+
+@{
+    ViewBag.Title = "Modyfikuj pozycję";
+}
+
+<h2>Edycja</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <hr/>
+        <div class="form-group">
+            <div class="control-label col-md-2 form-key hidden">id</div>
+            <div class="col-md-10">
+                <input type="text" class="form-control form-value hidden" value="@((string)((dynamic)Model).id)"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="control-label col-md-2 form-key hidden">Type</div>
+            <div class="col-md-10">
+                <input type="text" class="form-control form-value hidden" value="@((string)((dynamic)Model).Type)" />
+            </div>
+        </div>
+
+        <div id="property-collection">
+            @foreach (KeyValuePair<string, object> keyValuePair in Model)
+            {
+                if (keyValuePair.Key != "id" && keyValuePair.Key != "Type" && !keyValuePair.Key.StartsWith("_"))
+                {
+
+                    <div class="form-group">
+                        <div class="control-label col-md-2 form-key">@keyValuePair.Key</div>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control form-value" value="@keyValuePair.Value" />
+                        </div>
+                    </div>
+                }
+            }
+
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="save-button" value="Zapisz" class="btn btn-default"/>
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#save-button').click(function() {
+            var form = '';
+
+            var keys = $(".form-key");
+            var values = $(".form-value");
+
+            for (var i = 0, len = keys.length; i < len; i++) {
+                var k = keys[i].value;
+                if (!k)
+                    k = keys[i].innerHTML;
+                var v = values[i].value;
+                if ($.isEmptyObject(k) || $.isEmptyObject(v))
+                    continue;
+                var current = k + "=" + v;
+                form += current;
+
+                if (i < len - 1)
+                    form += "&";
+            }
+
+            $.ajax({
+                type: 'POST',
+                url: "/Home/Edit",
+                data: form,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.result === "Error") {
+                        alert(data.message);
+                    }
+                }
+            });
+            document.location.href = "/";
+        });
+    })
+</script>
+
+<div>
+    @Html.ActionLink("Powrót do strony głównej", "Index")
+</div>

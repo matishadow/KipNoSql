@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Kip.Core;
 using Kip.Interfaces;
 using Kip.Models;
+using Kip.Models.Base;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 
@@ -48,9 +49,33 @@ namespace Kip.Web.Controllers
             return View();
         }
 
-        public ActionResult Edit(int id)
+        public async Task<ActionResult> Edit(Guid id)
         {
-            return View();
+            dynamic item = await ItemGetter.GetItemAsync(id);
+
+            return View(item);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit(FormCollection collection)
+        {
+            if (!collection.HasKeys())
+                return RedirectToAction("Edit");
+
+
+            var expandoCollection = new ExpandoObject() as IDictionary<string, object>;
+            foreach (string key in collection.AllKeys)
+            {
+                if (key == null)
+                    continue;
+
+                expandoCollection.Add(new KeyValuePair<string, object>(key, collection[key]));
+            }
+            dynamic expandoObject = (ExpandoObject)expandoCollection;
+
+            await ItemUpdater.UpdateItemAsync(new Guid(expandoObject.id), expandoObject);
+
+            return RedirectToAction("Index");
         }
 
         protected async Task<ActionResult> Create(FormCollection collection, string controllerName)
