@@ -34,11 +34,6 @@ namespace Kip.Web.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         [HttpPost]
         public async Task<ActionResult> Create(FormCollection collection)
         {
@@ -63,7 +58,7 @@ namespace Kip.Web.Controllers
 
         public ActionResult PresentationLink()
         {
-            return View();
+            return RedirectPermanent("https://prezi.com/cbxsx6rjqdrv/?utm_campaign=share&utm_medium=copy&rc=ex0share");
         }
     }
 }
